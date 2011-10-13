@@ -2,12 +2,14 @@ package Cotdama::NotifyData;
 
 use Modern::Perl;
 use Mouse;
+use Mouse::Util::TypeConstraints;
 use Time::Piece;
 
-has created_on => ( is => 'ro', isa => 'Time::Piece', default => sub { localtime() } );
+enum Severity => (qw/ critical caution warning notice infomation debug /);
 
-for my $method ( qw/ action level message / ) {
-    has $method => ( is => 'ro', isa => 'Str', required => 1 );
-}
+has created_on => ( is => 'ro', isa => 'Time::Piece', default => sub { localtime() } );
+has message    => ( is => 'ro', isa => 'Str', required => 1 );
+has action     => ( is => 'ro', isa => 'Str', default => 'undefined' );
+has severity   => ( is => 'ro', isa => 'Severity', default => 'infomation' );
 
 1;
