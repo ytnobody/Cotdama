@@ -24,7 +24,6 @@ subtest notify_data => sub {
         else {
             isa_ok $o, 'Cotdama::NotifyData';
         }
-diag explain $o;
     }
 };
 
