@@ -1,6 +1,5 @@
 package Cotdama;
 
-use Modern::Perl;
 use Cotdama::NotifyData;
 use Mouse;
 use Mouse::Util;

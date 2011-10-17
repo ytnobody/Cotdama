@@ -1,5 +1,4 @@
 package Cotdama::Notify;
-use Modern::Perl;
 use Mouse;
 use Try::Tiny;
 

@@ -1,5 +1,4 @@
 package Cotdama::Notify::Twitter;
-use Modern::Perl;
 use Net::Twitter::Lite;
 use Mouse;
 use Encode ();
@@ -27,7 +26,7 @@ sub BUILD {
     $n->access_token_secret( $access_token_secret );
 }
 
-after get_notify => sub {
+override get_notify => sub {
     my ( $self, $notify ) = @_;
     $self->notifier->update( '['.$notify->severity.'] #'.$notify->action.' '. Encode::decode_utf8( $notify->message ) );
 };

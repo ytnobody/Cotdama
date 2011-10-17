@@ -1,0 +1,13 @@
+From: <: $mailfrom :>
+Subject: <: $subject_prefix :> <: $notify.severity :> - <: $notify.action :>
+X-Mailer: <: $x_mailer :>
+
+Created On: <: $notify.created_on :>
+Severity: <: $notify.severity :>
+Action: <: $notify.action :>
+
+<: $notify.message :>
+
+---
+Cotdama - Unified Notification
+

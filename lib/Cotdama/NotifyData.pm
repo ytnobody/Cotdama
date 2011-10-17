@@ -1,6 +1,5 @@
 package Cotdama::NotifyData;
 
-use Modern::Perl;
 use Mouse;
 use Mouse::Util::TypeConstraints;
 use Time::Piece;

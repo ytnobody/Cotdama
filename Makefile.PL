@@ -2,11 +2,12 @@ use inc::Module::Install;
 name 'Cotdama';
 all_from 'lib/Cotdama.pm';
 
-requires 'Modern::Perl';
 requires 'Mouse';
 requires 'Try::Tiny';
 requires 'Time::Piece';
 requires 'Net::Twitter::Lite';
+requires 'Email::Send';
+requires 'Guard';
 
 tests 't/*.t';
 
