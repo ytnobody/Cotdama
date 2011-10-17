@@ -6,6 +6,7 @@ requires 'Modern::Perl';
 requires 'Mouse';
 requires 'Try::Tiny';
 requires 'Time::Piece';
+requires 'Net::Twitter::Lite';
 
 tests 't/*.t';
 

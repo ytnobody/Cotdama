@@ -6,7 +6,7 @@ use Mouse;
 use Mouse::Util;
 use Try::Tiny;
 
-our $VERSION = '0.01';
+our $VERSION = 0.01;
 
 has config => ( is => 'ro', isa => 'ArrayRef', required => 1 );
 has modules => ( is => 'rw', isa => 'ArrayRef' );
@@ -41,7 +41,7 @@ sub notify {
     
     my @result;
     for my $modules ( @{ $self->modules } ) {
-        push @result, { module => ref $modules, result => $modules->get_notify( $ndata ) };
+        push @result, { module => ref $modules, result => $modules->get_notify( $ndata ) || '' };
     }
     return @result;
 }
