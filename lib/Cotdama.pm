@@ -20,14 +20,14 @@ sub BUILD {
         unless( Mouse::Util::is_class_loaded( $klass ) ) {
             Mouse::Util::load_class( $klass );
         }
-        push @{ $self->{modules} }, $klass->new( %{$conf->{args}} );
+        push @{ $self->{modules} }, $klass->new( %{$conf} );
     }
 }
 
 sub load {
     my ( $class, $config_file ) = @_;
     my @config = require $config_file;
-    return $class->new( @config );
+    return $class->new( config => [@config] );
 }
 
 sub notify {

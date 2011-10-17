@@ -10,6 +10,7 @@ requires 'Time::Piece';
 tests 't/*.t';
 
 test_requires 'Test::More';
+test_requires 'File::Spec';
 auto_set_repository;
 auto_include;
 WriteAll;

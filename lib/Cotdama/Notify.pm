@@ -2,6 +2,8 @@ package Cotdama::Notify;
 use Modern::Perl;
 use Mouse;
 
+has module => ( is => 'ro', isa => 'Str', required => 1 );
+has name => ( is => 'ro', isa => 'Str', required => 1 );
 has notifier => ( is => 'rw', isa => 'Object' );
 
 sub get_notify {

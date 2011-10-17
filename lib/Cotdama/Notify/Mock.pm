@@ -2,11 +2,11 @@ package Cotdama::Notify::Mock;
 
 use Modern::Perl;
 use Mouse;
-use parent qw/ Cotdama::Notify /;
+extends 'Cotdama::Notify';
 
 after 'get_notify' => sub {
     my ( $self, $notify ) = @_;
-    say join( ' ', __PACKAGE__, $notify->created_on, "action=".$notify->action, $notify->message );
+    Carp::croak join( ' ', __PACKAGE__, "[".$notify->severity."]", $notify->created_on, "action=".$notify->action, $notify->message );
 };
 
 1;
