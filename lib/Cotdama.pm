@@ -60,7 +60,7 @@ Cotdama - Universal Notifier
   ## or ##
   my $cot = Cotdama->load( 'path/to/config.pl' );
   
-  $cot->notify( action => 'machine.local', level => 'warn', message => 'Disk usage over 95% !!' );
+  $cot->notify( action => 'machine.local', severity => 'warning', message => 'Disk usage over 95% !!' );
 
 =head1 DESCRIPTION
 
