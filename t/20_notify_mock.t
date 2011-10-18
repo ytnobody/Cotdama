@@ -1,25 +1,8 @@
 use strict;
 use Test::More;
-use Try::Tiny;
 use Cotdama;
 use File::Spec;
-
-sub mock_like (&$;$) {
-    my ( $code, $pattern, $name ) = @_;
-    $name ||= 'Format';
-    my $notify;
-    try {
-        $code->();
-    } catch {
-        $notify = $_;
-    };
-    like $notify, $pattern, $name;
-}
-
-sub mock_format (@) {
-    my ( $severity, $action, $message ) = @_;
-    return qr/^Cotdama::Notify::Mock \[$severity\] (Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{1,2} \d{2}:\d{2}:\d{2} \d{4} action=$action $message /;
-}
+use Cotdama::Test qw/ mock_like mock_format /;
 
 subtest load => sub {
     my $cot1 = Cotdama->new( config => [

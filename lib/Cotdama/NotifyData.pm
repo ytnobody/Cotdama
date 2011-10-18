@@ -13,4 +13,8 @@ has message    => ( is => 'ro', isa => 'Str', required => 1 );
 has action     => ( is => 'ro', isa => 'Str', default => 'undefined' );
 has severity   => ( is => 'ro', isa => 'Severity', default => 'infomation' );
 
+no Mouse;
 1;
+
+__END__
+

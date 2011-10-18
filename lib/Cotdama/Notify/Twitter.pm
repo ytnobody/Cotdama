@@ -4,6 +4,8 @@ use Mouse;
 use Encode ();
 
 extends 'Cotdama::Notify';
+with qw/ Cotdama::Notify::WithListener
+       /;
 
 our $VERSION = 0.01;
 
@@ -26,10 +28,12 @@ sub BUILD {
     $n->access_token_secret( $access_token_secret );
 }
 
-override get_notify => sub {
+sub get_notify {
     my ( $self, $notify ) = @_;
     $self->notifier->update( '['.$notify->severity.'] #'.$notify->action.' '. Encode::decode_utf8( $notify->message ) );
 };
+
+no Mouse;
 
 1;
 __END__

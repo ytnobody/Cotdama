@@ -17,5 +17,7 @@ sub render {
     return $self->xslate->render( $self->template_file, $args );
 }
 
+no Mouse::Role;
+
 1;
 __END__

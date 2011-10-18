@@ -85,10 +85,12 @@ for example
         args => {
             mailer      => 'SMTP',
             mailer_args => [ Host => 'smtp.example.com' ],
+            listener    => qr/^(admin|user)\./,
         },
       },
       { name => 'twitter-bot',
         module => 'Twitter',
+        listener => qr/^(user|admin)\./,
         args => {
             consumer_key        => 'xxxxxx',
             consumer_secret     => 'xxxxxx',
