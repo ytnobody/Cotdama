@@ -21,3 +21,50 @@ no Mouse::Role;
 
 1;
 __END__
+
+=head1 NAME
+
+Cotdama::Notify::WithXslate - Template Role for Cotdama::Notify
+
+=head1 SYNOPSIS
+
+  my $cot = Cotdama->new([
+      {
+          name     => 'with-xslate',
+          module   => 'Foobar',
+          xslate_options => {
+              path => File::Spec->catfile( 'path', 'to', 'template' ),
+          },
+          template_file  => 'notify_foobar.tx',
+      },
+  ]);
+
+=head1 DESCRIPTION 
+
+Cotdama::Notify::WithXslate implements *Xslate* template role into Cotdama::Notify::* modules.
+
+=head1 ATTRIBUTES 
+
+=head2 xslate_options (HASHREF: REQUIRED)
+
+As Text::Xslate attribute.
+
+=head2 template_file (STR: REQUIRED)
+
+Template filename
+
+=head1 AUTHOR
+
+ytnobody E<lt>ytnobody@gmail.comE<gt>
+
+=head1 SEE ALSO
+
+Text::Xslate
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
+
