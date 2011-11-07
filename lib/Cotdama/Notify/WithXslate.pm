@@ -39,9 +39,26 @@ Cotdama::Notify::WithXslate - Template Role for Cotdama::Notify
       },
   ]);
 
+then, in Cotdama::Notify::Foobar ...
+
+  package Cotdama::Notify::Foobar;
+  use Mouse;
+  extends 'Cotdama::Notify';
+  with qw/ Cotdama::Notify::WithXslate /;
+  
+  sub get_notify {
+      my ( $self, $notify ) = @_;
+      ...
+      my $rendered_string = $self->render( { foo => 'var', some => 'vals' } );
+  }
+
 =head1 DESCRIPTION 
 
 Cotdama::Notify::WithXslate implements *Xslate* template role into Cotdama::Notify::* modules.
+
+=head1 METHOD THAT PROVIDED
+
+=head2 $str = $self->render( \%ARGS );
 
 =head1 ATTRIBUTES 
 
